@@ -19,4 +19,19 @@ RestClient.create("https://api.deezer.com");
         .body(String.class);
     }
 
+    @GetMapping("api/search/songs")
+    public String searchSongs(@RequestParam String q) {
+        return deezer.get()
+        .uri("search/track?q={q}", q)
+        .retrieve()
+        .body(String.class);
+    }
+
+    @GetMapping("api/search/albums")
+    public String searchAlbums(@RequestParam String q) {
+        return deezer.get()
+        .uri("search/album?q={q}", q)
+        .retrieve()
+        .body(String.class);
+    }
 }

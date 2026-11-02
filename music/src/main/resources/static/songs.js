@@ -13,22 +13,22 @@ form.addEventListener("submit", async (event) => {
     results.textContent = "Searching...";
 
     // Ask YOUR Java server, which asks Deezer.
-    const response = await fetch("/api/search/albums?q=" + encodeURIComponent(q));
+    const response = await fetch("/api/search/songs?q=" + encodeURIComponent(q));
     const json = await response.json();
 
     results.textContent = ""; // clear "Searching..."
 
     // Deezer puts the list of artists in json.data
-    for (const artist of json.data) {
+    for (const songs of json.data) {
         const row = document.createElement("div");
         row.className = "result";
 
         const photo = document.createElement("img");
-        photo.src = artist.picture_small;
+        photo.src = songs.album.cover_small;
         photo.className = "result-photo";
 
         const name = document.createElement("span");
-        name.textContent = artist.name;
+        name.textContent = songs.title;
 
         const button = document.createElement("button");
         button.textContent = "+ Add";

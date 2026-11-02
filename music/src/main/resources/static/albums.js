@@ -19,16 +19,16 @@ form.addEventListener("submit", async (event) => {
     results.textContent = ""; // clear "Searching..."
 
     // Deezer puts the list of artists in json.data
-    for (const artist of json.data) {
+    for (const albums of json.data) {
         const row = document.createElement("div");
         row.className = "result";
 
         const photo = document.createElement("img");
-        photo.src = artist.picture_small;
+        photo.src = albums.cover_small;
         photo.className = "result-photo";
 
         const name = document.createElement("span");
-        name.textContent = artist.name;
+        name.textContent = albums.title;
 
         const button = document.createElement("button");
         button.textContent = "+ Add";

@@ -19,26 +19,47 @@ body {
 }
 
 header {
-    background: #222;
-    color: white;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
+    background: var(--surface);
+    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
-nav a {
-    color: car(--accent-bright);
+.logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    margin-left: 16px;
+    font-size: 18px;
 }
 
-nav a:hover {
-    color: car(--text);
-    text-decoration: underline;
+.pill {
+    background: #262626;
+    border-radius: 999px;
+    padding: 4px;
+    display: flex;
+    gap: 2px;
 }
 
-a {
-    color: var(--accent);
+.pill a {
+    color: var(--accent-bright);
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+
+.pill a:hover {
+    background: #333;
+}
+
+.pill a.active {
+    background: var(--accent);
+    color: white;
 }
 

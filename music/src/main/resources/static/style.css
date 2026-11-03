@@ -63,3 +63,47 @@ header {
     color: white;
 }
 
+input, button {
+    font: inherit;
+}
+
+.search-bar {
+    display: flex;
+    background: #262626;
+    border-radius: 999px;
+    padding: 4px;
+    border: 2px solid transparent;
+    max-width: 560px;
+}
+
+.search-bar:focus-within {
+    border-color: var(--accent);
+}
+
+.search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+    padding: 8px 16px;
+    font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted)
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-bright);
+}
